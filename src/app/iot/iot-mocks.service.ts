@@ -4,7 +4,6 @@ import { IResponse, IResponseErrorItem } from 'response-type';
 import { ILocation, CloudDevice, ICloudDeviceDailyHistory, DataSource } from '@app/definitions';
 import { random, times } from '@lodash';
 import { TranslateService } from '@ngx-translate/core';
-import 'rxjs/add/operator/delay';
 import { handleRoute, urlMatch, API } from '@app/common';
 import { IotSvgService } from '@services/iot-svg/iot-svg.service';
 import { IotDevices } from './iot-mocks';

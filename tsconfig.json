@@ -8,10 +8,19 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "paths": {
-      "@lodash": ["vendor/lodash.ts"],
-      "@app/*": ["app/*"],
-      "@components/*": ["app/components/*"],
-      "@services/*": ["app/services/*"]
+      "@lodash": [
+        "vendor/lodash.ts"
+      ],
+      "@app/*": [
+        "app/*"
+      ],
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@services/*": [
+        "app/services/*"
+      ],
+      "socket.io-client": ["node_modules/socket.io-client/dist/socket.io.slim.js"]
     },
     "experimentalDecorators": true,
     "target": "es5",
@@ -21,6 +30,7 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "module": "es2015"
   }
 }

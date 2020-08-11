@@ -6,10 +6,8 @@ import {
   HttpInterceptor,
   HttpHeaders
 } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { UserService } from '@app/services/user.service';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ActionsService } from '@app/ng5-basic/actions.service';
@@ -31,14 +29,7 @@ export class TokenInterceptor implements HttpInterceptor {
       'x-lang': this.translate.currentLang
     } , HeadersToObject(request.headers));
     request = request.clone({ setHeaders: headers });
-    return next.handle(request).do((event) => {
-      return event;
-    }).catch((err: any, caught: Observable<HttpEvent<any>>): Observable<any> => {
-      if (err.status === 401) {
-        this.router.navigateByUrl('/login');
-      }
-      return err;
-    });
+    return next.handle(request);
   }
 }
 

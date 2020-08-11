@@ -18,8 +18,12 @@
  * BROWSER POLYFILLS
  */
 
+(window as any).global = window;
 
-import 'intl';
+import 'rxjs/add/operator/share';
+
+
+// import 'intl';
 /** IE9, IE10 and IE11 requires all of the following polyfills. **/
 // import 'core-js/es6/symbol';
 import 'core-js/es6/object';
@@ -44,7 +48,7 @@ import 'core-js/es6/array';
 
 /** Evergreen browsers require these. **/
 import 'core-js/es6/reflect';
-import 'core-js/es7/reflect';
+
 
 
 /** ALL Firefox browsers require the following to support `@angular/animation`. **/

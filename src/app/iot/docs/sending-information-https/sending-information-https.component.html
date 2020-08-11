@@ -29,16 +29,6 @@ if you can specify the location automatically, it's gonna give you same possibil
   Type the sourcename:
   <input type="text"   (input)="ChangeExample()"
   [(ngModel)]="example.dataSourceId" placeholder="For example, device-3">
-  <rd-inline-api
-  type="post"
-  [headers]="boardcastHeaderExample"
-  [body]="boardcastBodyExample"
-  [url]="GetUrl('broadcast/collect')"
-  ></rd-inline-api>
+
   <br>
-  <div style="border-left: 2px solid black; padding-left: 15px;">
-    <h4>YAML</h4>
-    <p>Also you can provide us the yaml version with UDP. Please read UDP documents for more information</p>
-    <pre>{{GetYAML({headers: boardcastHeaderExample, body: boardcastBodyExample})}}</pre>
-  </div> 
 </app-page-container>

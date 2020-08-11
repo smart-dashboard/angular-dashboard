@@ -37,7 +37,7 @@ export class SettingsComponent implements OnInit {
     }).catch(error => {
       console.error(error);
     });
-    
+
   }
 
 }

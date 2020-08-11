@@ -2,17 +2,15 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CloudDevice, CloudDeviceType } from '@app/definitions';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import 'rxjs/add/operator/toPromise';
 import { IResponse } from 'response-type';
 import { error } from '@app/common';
 import { NotificationService } from '@app/services/notification.service';
 import { TranslateService } from '@ngx-translate/core';
-import 'rxjs/add/observable/combineLatest';
-import { Observable } from 'rxjs/Observable';
+
 import { IotModuleState } from '@app/iot/iot.module.defs';
 import { IotRequestsService } from '@app/iot/iot-requests.service';
 import { ActionsService } from '@app/ng5-basic/actions.service';
-
+import { combineLatest } from 'rxjs';
 @Component({
   selector: 'app-device-single',
   templateUrl: './device-single.component.html',
@@ -41,7 +39,7 @@ export class DeviceSingleComponent implements OnInit, OnDestroy {
    }
 
   async ngOnInit() {
-    Observable.combineLatest(
+    combineLatest(
       this.store.select('iotModule'),
       this.route.params
     ).subscribe(([{devices}, params]) => {

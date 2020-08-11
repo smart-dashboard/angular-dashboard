@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { IResponse, IResponseErrorItem } from 'response-type';
 import { matchPattern } from 'url-matcher';
 import { environment } from '../../environments/environment';
@@ -9,8 +9,8 @@ import { IUserForm, IUser, IContact, IResetForm } from '@app/definitions';
 import { IotSvgService } from '@services/iot-svg/iot-svg.service';
 import { random, times } from '@lodash';
 import { TranslateService } from '@ngx-translate/core';
-import 'rxjs/add/operator/delay';
 import { API } from '@app/common';
+import { of } from 'rxjs';
 
 @Injectable()
 export class MockService {
@@ -74,7 +74,7 @@ export class MockService {
       statusText: 'OK',
       url: req.url
     } );
-    return Observable.of( mockResponse );
+    return of( mockResponse );
   }
 
   public ResetPassword(req: HttpRequest<IResetForm>): IResponse<any> {
@@ -259,7 +259,7 @@ export class MockService {
           ]
         },
       };
-    };
+    }
     return {
       data: {
         items: []

@@ -4,13 +4,11 @@ import {
   ICloudDeviceDailyHistory,
   ILocation
  } from '@app/definitions';
-import 'rxjs/add/observable/of';
 import { Store } from '@ngrx/store';
 import { HttpClient } from '@angular/common/http';
 import { IotMockService } from './iot-mocks.service';
 import { IResponse } from 'response-type';
 import { GetNetworkError, IsSuccessEntity, GetUrl } from '@app/common';
-import 'rxjs/add/operator/toPromise';
 import { IotModuleState } from '@app/iot/iot.module.defs';
 import { random } from '@lodash';
 

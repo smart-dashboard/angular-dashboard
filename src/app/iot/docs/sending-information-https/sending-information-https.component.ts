@@ -5,7 +5,6 @@ import { environment } from 'environments/environment';
 import { IsSuccessEntity } from '@app/common';
 import { IotRequestsService } from '@app/iot/iot-requests.service';
 declare var require: any;
-const YAML = require('yamljs');
 
 @Component({
   selector: 'app-sending-information-https',
@@ -75,7 +74,4 @@ export class SendingInformationHttpsComponent implements OnInit {
     return environment.api + environment.apiPrefix + '/' + affix;
   }
 
-  public GetYAML (object) {
-    return YAML.stringify(object, 2);
-  }
 }

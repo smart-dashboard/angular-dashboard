@@ -57,9 +57,11 @@ export class LoginFormComponent implements OnInit {
     this.router.navigateByUrl('/index');
   }
   private signinHttp (data: IUserForm) {
+    console.log(data);
     window.scroll(0, 0);
     this.http.post(this.url, data).subscribe(
       (response) => {
+        console.log('#1');
         this.response = response;
         if (this.response.data && this.response.data.items[0]) {
           this.onSigninSuccess(response);
@@ -67,6 +69,7 @@ export class LoginFormComponent implements OnInit {
         this.isRequesting = false;
       },
       (response) => {
+        console.log('#2', response);
         this.isRequesting = false;
         if (response.name === 'HttpErrorResponse') {
           this.response = GetNetworkError();

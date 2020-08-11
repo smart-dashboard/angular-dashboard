@@ -1,7 +1,7 @@
 import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector, EmbeddedViewRef } from '@angular/core';
 import { IDialogConfiguration, IDialogResult } from '../interfaces/definitions';
 import { NgMediaSelectorComponent } from '../components/ng-media-selector/ng-media-selector.component';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class NgMediaService {

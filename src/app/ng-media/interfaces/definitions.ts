@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Storage } from '../services/storage';
 
 export interface IRectangle {

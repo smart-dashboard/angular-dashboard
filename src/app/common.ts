@@ -1,5 +1,5 @@
 import { IResponse } from 'response-type';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { HttpEvent, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import { matchPattern } from 'url-matcher';
 
@@ -19,8 +19,8 @@ export function error (response: IResponse<any>, fieldName: string) {
   if ( ! response || ! response.error || !response.error.errors) {
     return '';
   }
-  const error = response.error.errors.find(x => x.location === fieldName);
-  return error ? error.message : '';
+  const $error = response.error.errors.find(x => x.location === fieldName);
+  return $error ? $error.message : '';
 }
 
 export const IotImages = [

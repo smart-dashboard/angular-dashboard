@@ -52,7 +52,7 @@ export class UploadComponent {
       const reader: FileReader = new FileReader();
       reader.onloadend = (e) => {
         const formData = new FormData();
-        formData.append('file', reader.result);
+        // formData.append('file', reader.result);
         formData.append('filename', file.name);
         const headers = new HttpHeaders({ 'enctype': 'multipart/form-data' });
         this.http.post('http://localhost:1337/ngmedia/upload', formData, { headers: headers }).subscribe(
@@ -64,7 +64,7 @@ export class UploadComponent {
           }
         );
 
-        img.src = reader.result;
+        // img.src = reader.result;
         img.onload = () => {
           width = img.width;
           height = img.height;

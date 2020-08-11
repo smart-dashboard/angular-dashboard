@@ -4,7 +4,6 @@ import { IResponse } from 'response-type';
 import { IUser, IRole } from '@app/definitions';
 import { random } from '@lodash';
 import { TranslateService } from '@ngx-translate/core';
-import 'rxjs/add/operator/delay';
 import { handleRoute, urlMatch, API } from '@app/common';
 
 let $Users: Array<IUser> = [

@@ -24,7 +24,7 @@ import { NavigationComponent } from '@components/navigation/navigation.component
 import { SidebarWidgetComponent } from '@components/sidebar-widget/sidebar-widget.component';
 import { IotSvgService } from '@services/iot-svg/iot-svg.service';
 import { environment } from '../environments/environment';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MockInterceptor } from '@services/mock.interceptor';
 import { MockService } from '@services/mocks.service';
 import { TokenInterceptor } from '@services/token.interceptor';
@@ -46,10 +46,12 @@ import { AngularCalendarComponent } from '@app/boilerplate/angular-calendar/angu
 import { IotModule } from '@app/iot/iot.module';
 import { GlobalizationService } from '@app/ng5-basic/globalization.service';
 import { NgxSidebarModule } from '@app/ng5-basic/ngx-sidebar/ngx-sidebar.module';
-
+import { NgBillingModule } from '@ng-dashboard/billing';
+import { NgDashboardModule } from '@ng-dashboard/core';
 declare var require: any;
 const Highcharts = require('highcharts/highstock');
 window['Highcharts'] = Highcharts;
+import { navigation } from '@app/app.navigation';
 
 @Component({
   selector: 'app-root',
@@ -107,6 +109,7 @@ export class AppComponent implements OnInit {
     NavigationComponent,
   ],
   imports: [
+    HttpClientModule,
     NgxTooltipModule,
     BrowserAnimationsModule,
     Ng5BasicModule,
@@ -115,6 +118,10 @@ export class AppComponent implements OnInit {
     IotModule,
     UsersModule,
     NgxSidebarModule,
+    NgDashboardModule.forRoot({
+      navigation: navigation
+    }),
+    NgBillingModule.forRoot({}),
     TranslateModule.forRoot(),
     CalendarModule.forRoot(),
     NgMediaModule,

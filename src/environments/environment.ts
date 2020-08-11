@@ -9,6 +9,6 @@ export const environment = {
   api: 'http://localhost:1337',
   socket: 'http://localhost:1337',
   apiPrefix: '/api',
-  github: false,
+  github: true,
   targetAPI: true,
 };

@@ -5,11 +5,10 @@ import {
   ISettingsUpdateResponse,
   IContact
  } from '@app/definitions';
-import 'rxjs/add/observable/of';
+
 import { HttpClient } from '@angular/common/http';
 import { IResponse } from 'response-type';
 import { GetNetworkError, GetUrl } from '@app/common';
-import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class RequestsService {

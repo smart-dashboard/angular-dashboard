@@ -10,6 +10,7 @@ import { ContactDetailsComponent } from '@app/components/contact-details/contact
 import { userAuthLayoutRoutes } from '@app/users/user-routes';
 import { AngularCalendarComponent } from '@app/boilerplate/angular-calendar/angular-calendar.component';
 import { IotAuthLayoutRoutes } from '@app/iot/iot-routes';
+// import { LayoutComponent } from '@ng-dashboard/core';
 
 export function AuthLayoutChild(component: any, route: string, options: any = {}): Route {
   return {

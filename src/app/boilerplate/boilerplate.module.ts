@@ -8,21 +8,22 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UserCommonService } from '@app/users/user-common.service';
 import { UserMockService } from '@app/users/user-mocks.service';
 import { UserRequestsService } from '@app/users/user-requests.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UserMockInterceptor } from '@app/users/user-mock.interceptor';
 import { environment } from 'environments/environment';
 import { userModuleReducersGenerator } from '@app/users/user-module.reducers';
 
 @NgModule({
   imports: [
+    HttpClientModule,
     CommonModule,
     RouterModule.forChild([]),
     TranslateModule.forRoot(),
     NgxTooltipModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbModule.forRoot(),
-    NgbModalModule.forRoot(),
+    NgbModule,
+    NgbModalModule,
     userModuleReducersGenerator(),
   ],
   providers: [

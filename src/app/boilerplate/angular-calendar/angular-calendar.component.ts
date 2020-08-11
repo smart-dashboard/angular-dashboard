@@ -14,7 +14,7 @@ import {
   isSameMonth,
   addHours
 } from 'date-fns';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import {
   CalendarEvent,
   CalendarEventAction,

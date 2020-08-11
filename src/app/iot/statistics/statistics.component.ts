@@ -1,10 +1,9 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CloudDeviceType } from '@app/definitions';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/combineLatest';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, Subscription } from 'rxjs';
 import { IotModuleState } from '@app/iot/iot.module.defs';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-statistics',
@@ -27,7 +26,7 @@ export class StatisticsComponent implements OnInit, OnDestroy {
     if (this.statistics.length) {
       return;
     }
-    this.ref = Observable.combineLatest(
+    this.ref = combineLatest(
       this.store.select('iotModule'),
     ).subscribe((sink) => {
       this.statistics = [];

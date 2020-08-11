@@ -7,6 +7,7 @@ import { IsDataSource, GetUrl } from '@app/common';
 import { NotificationService } from '@app/services/notification.service';
 import { IotModuleState } from '@app/iot/iot.module.defs';
 import { IotRequestsService } from './iot-requests.service';
+(window as any).global = window;
 
 declare var Pusher: any;
 
